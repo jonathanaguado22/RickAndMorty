@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://programacion.net/files/article/20151006051016_votacion-estrellas-css.jpg"); 
 }
 
 code {

@@ -1,10 +1,18 @@
-export default function SearchBar({onSearch}) {
+import "./SearchBar.css"
+import {useState} from "react"
+
+
+export default function SearchBar(props) {
+   const [character, setCharacter]=useState();
+
+   
+   
    return (
-      <div>
+      <div className="searchb">
           
          <input type="search" />
 
-         <button onClick={()=> onSearch("not found id")}>Agregar</button> 
+         <button onClick={()=>props.onSearch(character)}> Agregar </button> 
          
       </div>
    );
