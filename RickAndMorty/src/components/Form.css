@@ -1,0 +1,50 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: auto;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  input {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 1rem;
+    width: 50%;
+  }
+  
+  button {
+    background-color: #61dafb;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+  }
+  
+  button:hover {
+    background-color: #45b8d8;
+  }
+  
+  
