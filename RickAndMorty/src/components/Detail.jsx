@@ -1,47 +1,48 @@
-
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import axios from "axios";
-import { Link } from "react-router-dom";
-
-const Detail = ()=>{
-
-    const {id} = useParams();
-const [character, setCharacter] = useState({});
+import React, {useState} from 'react';
+import  {useParams} from "react-router-dom";
+import { useEffect } from "react";
 
 
-useEffect(() => {
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+// const id=useParams()
+
+
+// function chars() {
+    
+    // }
+    
+    
+    export default function Detail (props){
         
-       if (data.name) {
-          setCharacter(data);
-       } else {
-          window.alert('No hay personajes con ese ID');
-       }
-    });
-    return setCharacter({});
-
- }, [id]);
-    return(
-        <div>
-
-            <button>
-
-                <Link to='home'>Home</Link>
-            </button>
-
-            <h1>{character?.name}</h1>
-            <h2>{character?.status}</h2>
-            <h2>{character?.species}</h2>
-            <h2>{character?.gender}</h2>
-            <h2>{character?.origin?.name}</h2>
-            <img src={character?.image} alt={character.name}/>
-
-
-
-        </div>
-    )
-}
-
-
-export default Detail
+        
+        const {id}=useParams()
+        const [character,setCharacter] = useState({});
+        
+        useEffect(() => {
+            fetch(`https://rickandmortyapi.com/api/character/${id}`)
+              .then((response) => response.json())
+          .then((char) => {
+            if (char.name) {
+                  setCharacter(char);
+                } else {
+              window.alert("No hay personajes con ese ID");
+            }
+          })
+          .catch((err) => {
+            window.alert("No hay personajes con ese ID");
+          });
+        return setCharacter({});
+      }, [id]);
+        return (
+            <div >
+              <img src={character.image} alt='imagen'/>
+              <div  >
+            <h1 >Name: {character.name}</h1>
+                    <h3>Status: {character.status}</h3>
+                    <h3>Specie: {character.species}</h3>
+                    <h3>Gender: {character.gender}</h3>
+                    <h3>Origin: {character.origin?.name}</h3>
+                  </div>
+              
+                </div>
+        )
+    }

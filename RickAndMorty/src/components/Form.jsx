@@ -1,12 +1,12 @@
-import React from 'react';
 
 import './Form.css'
 
+import React from 'react'
 import validate from './validation'
 
 
 
-export default function Forms(props) {
+export default function Form(props) {
     const [userData, setUserData] = React.useState({
      username: '', 
      password: '' });
@@ -36,8 +36,8 @@ export default function Forms(props) {
 
     return (
         
-        
-            <form className='form-container' onSubmit={handleSubmit}>
+        <div >
+            <form onSubmit={handleSubmit}>
                 <label>Username</label>
                     <input
                     
@@ -49,10 +49,10 @@ export default function Forms(props) {
                     type="text"
                     value={userData.username}>
                     </input>
-                    <p>{errors.username}</p>
+                    
                     <label>Password</label>
                     <input
-                   
+                    
                     onChange={handleInputChange}
                     id='password'
                     htmlFor='password'
@@ -67,7 +67,7 @@ export default function Forms(props) {
 
 
             </form>
-        
+            </div>
 
 
     )
